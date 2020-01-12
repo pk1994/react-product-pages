@@ -29,6 +29,7 @@ class Githubprof extends Component {
         }
       });
       finalarray.push(Obj1);
+      console.log(finalarray);
     });
 
     // console.log(finalarray);
@@ -92,35 +93,48 @@ class Githubprof extends Component {
       this.state.bandoptions.length > 0 ? this.state.bandoptions : [];
     const subband =
       this.state.subbandoptions.length > 0 ? this.state.subbandoptions : [];
+    // var border = "1px solid";
+    // var bandborder = !this.state.bandbool ? "1px solid" : "";
+    // console.log("test", bandborder, border);
+    // var subbandboolborder = this.state.subbandbool ? border : "";
     return (
       <div>
         <div className="container" style={{ padding: 50 + "px" }}>
           <div className="row">
             <div className="col-3">
-              <Dropdown
-                options={[...new Set(productoptions)]}
-                onChange={this.onSelectProduct}
-                value={this.state.selectectedtext}
-                placeholder="Select an ProductId"
-              />
+              <h5>ProductId :</h5>
+              <div>
+                <Dropdown
+                  options={[...new Set(productoptions)]}
+                  onChange={this.onSelectProduct}
+                  value={this.state.selectectedtext}
+                  placeholder="Select a ProductId"
+                />
+              </div>
             </div>
             <div className="col-3">
-              <Dropdown
-                options={[...new Set(bandoptions)]}
-                disabled={this.state.bandbool}
-                onChange={this.onSelectbandoptions}
-                value={this.state.bandoptionstext}
-                placeholder="Select a Band"
-              />
+              <h5>Band :</h5>
+              <div>
+                <Dropdown
+                  options={[...new Set(bandoptions)]}
+                  disabled={this.state.bandbool}
+                  onChange={this.onSelectbandoptions}
+                  value={this.state.bandoptionstext}
+                  placeholder="Select a Band"
+                />
+              </div>
             </div>
             <div className="col-3">
-              <Dropdown
-                options={[...new Set(subband)]}
-                disabled={this.state.subbandbool}
-                onChange={this.onSelectsubband}
-                value={this.state.subbandtext}
-                placeholder="Select a Subband"
-              />
+              <h5>SubBand :</h5>
+              <div>
+                <Dropdown
+                  options={[...new Set(subband)]}
+                  disabled={this.state.subbandbool}
+                  onChange={this.onSelectsubband}
+                  value={this.state.subbandtext}
+                  placeholder="Select a Subband"
+                />
+              </div>
             </div>
           </div>
         </div>
